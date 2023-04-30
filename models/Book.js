@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
-const BookSchema = mongoose.Schema({
+const Schema = mongoose.Schema;
+const ObjectId = Schema.Types.ObjectId;
+
+const BookSchema =  new Schema({
   id: {
     type: Number,
     required: true
@@ -24,5 +27,9 @@ const BookSchema = mongoose.Schema({
   description: String,
   backgroundColor: String,
   navTintColor: String,
+  categoryId: [{
+    type: ObjectId,
+    ref: 'Category'
+  }]
 }, { versionKey: false });
 module.exports = mongoose.model("Book", BookSchema);
