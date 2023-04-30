@@ -7,7 +7,7 @@ const {
     deleteCategory,
     getAllCategory,
     getCategoryById
-} = require('../controller/category');
+} = require('../controller/categoryController');
 
 // queries
 router.get("/", getAllCategory);

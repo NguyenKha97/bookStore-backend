@@ -16,7 +16,7 @@ app.use(cors());
 app.use(express.static('public'));
 
 app.get("/",(req,res)=>{
-  res.send("Hello Kha, this is your server");
+  res.send("Hello admin this is your server");
 })
 
 app.use('/user',userRouter);
