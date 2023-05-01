@@ -90,7 +90,7 @@ const {
 // queries
 router.get("/", getAllUser);
 router.get("/:username", getUser);
-router.get("/login", checkUser)
+router.post("/login", checkUser)
 
 // mutations
 router.post("/", createUser);

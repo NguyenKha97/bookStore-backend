@@ -62,10 +62,10 @@ const checkUser = async (req, res, next) => {
     const user = await User.findOne({ username: req.body.username });
     if (!user) {
       return res.json({ message: "User not found" });
-    } else if (user.password === req.body.password) {
-      res.json(user);
-    } else {
+    } else if (user.password !== req.body.password) {
       res.json({ message: "Wrong password" });
+    } else {
+      res.json(user);
     }
   } catch (err) {
     res.json({ message: err });
