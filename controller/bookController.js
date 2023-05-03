@@ -16,7 +16,8 @@ const createBook = async (req, res, next) => {
         description: req.body.description,
         backgroundColor: req.body.backgroundColor,
         navTintColor: req.body.navTintColor,
-        categoryId: req.body.categoryId
+        categoryId: req.body.categoryId,
+        contentImg: req.body.contentImg
     });
     // console.log(book);
     try {
@@ -43,8 +44,8 @@ const updateBook = async (req, res, next) => {
                 description: req.body.description,
                 backgroundColor: req.body.backgroundColor,
                 navTintColor: req.body.navTintColor,
-                categoryId: req.body.categoryId
-
+                categoryId: req.body.categoryId,
+                contentImg: req.body.contentImg
             },
         });
         //   console.log(updatedBook);
