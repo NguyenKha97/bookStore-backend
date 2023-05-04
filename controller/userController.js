@@ -27,9 +27,9 @@ const createUser = async (req, res, next) => {
 
 const updateUser = async (req, res, next) => {
   try {
-        const oldUser = await User.findOne({ username: req.body.username });
-        if (oldUser) {
-          return res.json({ message: "User existed" });
+        const savedUser = await User.findOne({ username: req.body.username });
+        if (!savedUser) {
+          return res.json({ message: "User doesn't exist" });
         } else {
           const updatedUser = await User.updateOne({
             $set: {
@@ -42,6 +42,7 @@ const updateUser = async (req, res, next) => {
             },
           });
         }
+        res.json({ message: "Update successfully" });
       } catch (err) {
         res.json({ message: err });
       }
