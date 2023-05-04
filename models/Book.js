@@ -30,6 +30,9 @@ const BookSchema =  new Schema({
   categoryId: [{
     type: ObjectId,
     ref: 'Category'
+  }],
+  contentImg: [{
+    type: String
   }]
 }, { versionKey: false });
 module.exports = mongoose.model("Book", BookSchema);
